@@ -76,6 +76,7 @@
   "PopUpForm.Email.success_register.options.message.placeholder": "<p>请点击此链接验证您的帐户</p>",
   "PopUpForm.Email.success_register.options.object.placeholder": "请确认您的电子邮件地址 %APP_NAME%",
   "PopUpForm.Providers.callback.placeholder": "文本",
+  "PopUpForm.Providers.feishu.providerConfig.redirectURL": "Feishu 应用中配置的重定向 URL",
   "PopUpForm.Providers.discord.providerConfig.redirectURL": "Discord 应用中配置的重定向 URL",
   "PopUpForm.Providers.enabled.description": "如果禁用，用户将无法使用此供应商。",
   "PopUpForm.Providers.enabled.label": "启用",

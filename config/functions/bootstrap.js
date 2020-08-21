@@ -24,6 +24,14 @@ module.exports = async () => {
       enabled: true,
       icon: 'envelope',
     },
+    feishu: {
+      enabled: false,
+      icon: 'feishu',
+      key: '',
+      secret: '',
+      callback: `${strapi.config.server.url}/auth/feishu/callback`,
+      scope: ['identify', 'email'],
+    },
     discord: {
       enabled: false,
       icon: 'discord',

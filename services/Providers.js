@@ -125,8 +125,38 @@ const getProfile = async (provider, query, callback) => {
     case 'feishu': {
       const feishu = purest({
         provider: 'feishu',
-        config: purestConfig,
+        config: {
+          feishu: {
+            'https://open.feishu.cn/open-apis/': {
+              __domain: {
+                auth: {
+                  auth: { bearer: '[0]' },
+                },
+              },
+              '{endpoint}': {
+                __path: {
+                  alias: '__default',
+                },
+              },
+            },
+          },
+        },
       });
+      feishu
+        .query()
+        .get('authen/v1/user_info')
+        .auth(access_token)
+        .request((err, res, body) => {
+          if (err) {
+            callback(err);
+          } else {
+            callback(null, {
+              username: body.name,
+              email: body.email,
+            });
+          }
+        });
+      break;
     }
     case 'discord': {
       const discord = purest({
