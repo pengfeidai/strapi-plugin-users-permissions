@@ -152,7 +152,8 @@ const getProfile = async (provider, query, callback) => {
           } else {
             callback(null, {
               username: body.data.name,
-              email: body.email || body.data.name.toLowerCase() + 'diancun.net',
+              email: body.email || body.data.name.toLowerCase() + '@diancun.net',
+              avatar: body.data.avatar_big || '',
             });
           }
         });
