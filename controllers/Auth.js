@@ -56,7 +56,8 @@ module.exports = {
         );
       }
 
-      const query = { provider };
+      // 由于username唯一，不需要校验provider，保证第三方用户也能通过密码登录
+      const query = {};
 
       // Check if the provided identifier is an email or not.
       const isEmail = emailRegExp.test(params.identifier);
